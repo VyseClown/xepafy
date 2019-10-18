@@ -33,10 +33,16 @@ export default function Card({ data, index, listIndex }) {
       }
 
       const targetSize = ref.current.getBoundingClientRect();
+      console.log(targetSize);
       const targetCenter = (targetSize.bottom - targetSize.top) / 2;
+      console.log(targetCenter);
 
       const draggedOffset = monitor.getClientOffset();
+      console.log(draggedOffset);
       const draggedTop = draggedOffset.y - targetSize.top;
+      console.log(draggedTop);
+
+      console.log(draggedTop, targetCenter);
 
       if (draggedIndex < targetIndex && draggedTop < targetCenter) {
         return;
